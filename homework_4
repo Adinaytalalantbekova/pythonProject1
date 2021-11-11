@@ -1,0 +1,81 @@
+class TimeDesk:
+    def __init__(self, seconds):
+        self.seconds = seconds
+
+    def datetime(self, seconds):
+        n = str(seconds // 86400)
+        a = str(seconds // 3600 // 60)
+        b = str(seconds % 3600 // 60)
+        c = str(seconds % 3600 % 60)
+        d = ["{} дней, {} часов, {} минут, {} секунда".format(n, a, b, c)]
+        return d
+
+time = TimeDesk(seconds= 0)
+print(time.datetime(70))
+
+
+
+
+
+
+class Love_book:
+    def __init__(self, name, year, author, content):
+        self.name = name
+        self.year = year
+        self.author = author
+        self.content = content
+
+    def __str__(self):
+        return f'Name: {self.name}\n' \
+               f'Year: {self.year}\n' \
+               f'Author: {self.author}\n' \
+               f'Content: {self.content}'
+
+    def contents(self):
+        print('Разрешите себе быть богатым')
+
+    @property
+    def x(self):
+        print('Создавайте свою реальность')
+
+    @x.setter
+    def x(self, name):
+        self.name = 'Деньги возможности'
+        return name
+
+    @x.deleter
+    def x(self):
+        del self.year
+        return
+
+    @staticmethod
+    def static_func():
+        print('Определите цели и задачи')
+
+    @classmethod
+    def class_func(cls):
+        return "Решительность"
+
+
+love_book = Love_book(name='Не ной',
+                      year='2017',
+                      author='Джен Синсеро',
+                      content="Верьте в свои мечты")
+
+print(love_book)
+print(love_book.x)
+print(love_book.static_func())
+print(love_book.class_func())
+
+
+
+
+
+
+
+
+
+
+
+
+
